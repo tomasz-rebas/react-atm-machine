@@ -1,13 +1,21 @@
-const buildTransaction = (currentTransaction, digit) => {
-  if (currentTransaction === 0 && digit === 0) {
-    return currentTransaction;
+const MAX_TRANSACTION = 99_999;
+
+const buildTransaction = (current, digit) => {
+  if (current === 0 && digit === 0) {
+    return current;
   }
 
-  if (currentTransaction === 0 && digit > 0) {
+  if (current === 0 && digit > 0) {
     return digit;
   }
 
-  return currentTransaction * 10 + digit;
+  const updated = current * 10 + digit;
+
+  if (updated > MAX_TRANSACTION) {
+    return current;
+  }
+
+  return updated;
 };
 
 export const Keypad = ({ setTransaction }) => {

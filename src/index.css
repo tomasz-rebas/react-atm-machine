@@ -1,10 +1,15 @@
+main {
+  display: inline-block;
+}
+
 h1 {
   font-size: 24px;
 }
 
 .display {
   display: grid;
-  grid-template-columns: 120px 200px;
+  grid-template-columns: auto 1fr;
+  gap: 4px 24px;
   font-size: 18px;
   margin-bottom: 12px;
 }

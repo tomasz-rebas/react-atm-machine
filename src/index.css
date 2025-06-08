@@ -5,7 +5,7 @@ h1 {
 .display {
   display: grid;
   grid-template-columns: 120px 200px;
-  font-size: 1.1em;
+  font-size: 18px;
   margin-bottom: 12px;
 }
 
@@ -31,5 +31,5 @@ button {
 }
 
 .digit {
-  font-size: 1.2em;
+  font-size: 20px;
 }

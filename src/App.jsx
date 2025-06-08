@@ -14,6 +14,7 @@ export const App = () => {
       <div className="keyboard">
         <Keypad setTransaction={setTransaction} />
         <Controls
+          balance={balance}
           setBalance={setBalance}
           transaction={transaction}
           setTransaction={setTransaction}

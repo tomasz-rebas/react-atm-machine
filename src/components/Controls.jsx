@@ -1,16 +1,29 @@
-export const Controls = ({ setBalance, transaction, setTransaction }) => {
+const MAX_BALANCE = 999_999_999;
+
+export const Controls = ({
+  balance,
+  setBalance,
+  transaction,
+  setTransaction,
+}) => {
   const handleClear = () => {
     setTransaction(0);
   };
 
   const handleWithdraw = () => {
-    setBalance((prev) => prev - transaction);
-    setTransaction(0);
+    if (transaction <= balance) {
+      setBalance((prev) => prev - transaction);
+      setTransaction(0);
+    }
   };
 
   const handleDeposit = () => {
-    setBalance((prev) => prev + transaction);
-    setTransaction(0);
+    const updatedBalance = balance + transaction;
+
+    if (updatedBalance <= MAX_BALANCE) {
+      setBalance(updatedBalance);
+      setTransaction(0);
+    }
   };
 
   return (

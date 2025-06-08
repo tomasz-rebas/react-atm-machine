@@ -22,7 +22,7 @@ export const Controls = ({
 
   const handleDeposit = () => {
     if (canDeposit) {
-      setBalance(balance + transaction);
+      setBalance((prev) => prev + transaction);
       setTransaction(0);
     }
   };

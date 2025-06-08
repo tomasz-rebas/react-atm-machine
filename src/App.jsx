@@ -12,7 +12,7 @@ export const App = () => {
       <h1>ATM Machine</h1>
       <Display balance={balance} transaction={transaction} />
       <div className="keyboard">
-        <Keypad />
+        <Keypad setTransaction={setTransaction} />
         <Controls />
       </div>
     </>

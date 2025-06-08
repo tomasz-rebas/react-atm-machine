@@ -8,7 +8,7 @@ export const App = () => {
   const [transaction, setTransaction] = useState(0);
 
   return (
-    <>
+    <main>
       <h1>ATM Machine</h1>
       <Display balance={balance} transaction={transaction} />
       <div className="keyboard">
@@ -20,6 +20,6 @@ export const App = () => {
           setTransaction={setTransaction}
         />
       </div>
-    </>
+    </main>
   );
 };

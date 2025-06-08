@@ -4,7 +4,7 @@ import { Controls } from "./components/Controls";
 import { Display } from "./components/Display";
 
 export const App = () => {
-  const [balance, setBalance] = useState(1000000);
+  const [balance, setBalance] = useState(300000);
   const [transaction, setTransaction] = useState(0);
 
   return (

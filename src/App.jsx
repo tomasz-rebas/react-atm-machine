@@ -13,7 +13,11 @@ export const App = () => {
       <Display balance={balance} transaction={transaction} />
       <div className="keyboard">
         <Keypad setTransaction={setTransaction} />
-        <Controls />
+        <Controls
+          setBalance={setBalance}
+          transaction={transaction}
+          setTransaction={setTransaction}
+        />
       </div>
     </>
   );

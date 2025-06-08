@@ -1,8 +1,8 @@
 export const Display = ({ balance, transaction }) => (
   <div className="display">
     <label>Balance</label>
-    <div>{balance}</div>
+    <div>{balance.toLocaleString("en-US")}</div>
     <label>Transaction</label>
-    <div>{transaction}</div>
+    <div>{transaction.toLocaleString("en-US")}</div>
   </div>
 );

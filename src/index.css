@@ -1,0 +1,18 @@
+.keyboard {
+  display: flex;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+button {
+  width: 80px;
+  height: 50px;
+}
+
+.digit {
+  font-size: 1.2em;
+}

@@ -1,11 +1,7 @@
 const MAX_TRANSACTION = 99_999;
 
 const buildTransaction = (current, digit) => {
-  if (current === 0 && digit === 0) {
-    return current;
-  }
-
-  if (current === 0 && digit > 0) {
+  if (current === 0) {
     return digit;
   }
 

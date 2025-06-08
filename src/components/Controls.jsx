@@ -6,22 +6,23 @@ export const Controls = ({
   transaction,
   setTransaction,
 }) => {
+  const canWithdraw = transaction > 0 && transaction <= balance;
+  const canDeposit = transaction > 0 && balance + transaction <= MAX_BALANCE;
+
   const handleClear = () => {
     setTransaction(0);
   };
 
   const handleWithdraw = () => {
-    if (transaction <= balance) {
+    if (canWithdraw) {
       setBalance((prev) => prev - transaction);
       setTransaction(0);
     }
   };
 
   const handleDeposit = () => {
-    const updatedBalance = balance + transaction;
-
-    if (updatedBalance <= MAX_BALANCE) {
-      setBalance(updatedBalance);
+    if (canDeposit) {
+      setBalance(balance + transaction);
       setTransaction(0);
     }
   };
@@ -29,8 +30,12 @@ export const Controls = ({
   return (
     <div className="controls">
       <button onClick={handleClear}>Clear</button>
-      <button onClick={handleWithdraw}>Withdraw</button>
-      <button onClick={handleDeposit}>Deposit</button>
+      <button onClick={handleWithdraw} disabled={!canWithdraw}>
+        Withdraw
+      </button>
+      <button onClick={handleDeposit} disabled={!canDeposit}>
+        Deposit
+      </button>
       <button disabled />
     </div>
   );

@@ -26,14 +26,14 @@ export const Keypad = ({ setTransaction }) => {
         <button
           key={digit}
           value={digit}
-          className="digit"
+          className="digit-button"
           onClick={handleClick}
         >
           {digit}
         </button>
       ))}
       <button disabled />
-      <button value={0} className="digit" onClick={handleClick}>
+      <button value={0} className="digit-button" onClick={handleClick}>
         0
       </button>
       <button disabled />
